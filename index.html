@@ -35,47 +35,43 @@
     <div class="container">
       <div class="h2"></div>
       <div class="row">
-        <form>
+        <form id="priceCalcForm">
           <div class="row">
             <div class="col-4">
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label"
+                <label for="inputFullName" class="form-label"
                   >Nome Cognome</label
                 >
-                <input
-                  type="email"
-                  class="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                />
+                <input type="text" class="form-control" id="inputFullName" />
               </div>
             </div>
             <div class="col-4">
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label"
+                <label for="inputTravelDistance" class="form-label"
                   >Km da percorrere</label
                 >
                 <input
-                  type="email"
+                  type="text"
                   class="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
+                  id="inputTravelDistance"
                 />
               </div>
             </div>
             <div class="col-4">
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label"
+                <label for="inputAgeRange" class="form-label"
                   >Fascia d'età</label
                 >
-                <select id="inputState" class="form-select">
+                <select id="inputAgeRange" class="form-select">
                   <option selected>Maggiorenne</option>
                   <option>Minorenne</option>
                   <option>Over 65</option>
                 </select>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button id="submit" type="submit" class="btn btn-primary">
+              Submit
+            </button>
           </div>
         </form>
       </div>
