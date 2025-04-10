@@ -32,48 +32,87 @@
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <div class="container">
-      <div class="h2"></div>
-      <div class="row">
-        <form id="priceCalcForm">
+    <div class="wrapper d-flex flex-column vh-100 align-center justify-center">
+      <div class="container">
+        <div class="row">
+          <div class="h2 text-center">CALCOLA IL PREZZO DEL TUO BIGLIETTO</div>
+          <form id="priceCalcForm">
+            <div class="row">
+              <div class="col-4">
+                <div class="mb-3">
+                  <label for="inputFullName" class="form-label"
+                    >Nome Cognome</label
+                  >
+                  <input type="text" class="form-control" id="inputFullName" />
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="mb-3">
+                  <label for="inputTravelDistance" class="form-label"
+                    >Km da percorrere</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputTravelDistance"
+                  />
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="mb-3">
+                  <label for="inputAgeRange" class="form-label"
+                    >Fascia d'età</label
+                  >
+                  <select id="inputAgeRange" class="form-select">
+                    <option selected>Maggiorenne</option>
+                    <option>Minorenne</option>
+                    <option>Over 65</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-6 text-end">
+                <button id="submit" type="submit" class="btn btn-primary">
+                  Genera
+                </button>
+              </div>
+              <div class="col-6">
+                <button id="abort" type="reset" class="btn btn-outline-primary">
+                  Annulla
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="row">
+          <div class="h2 text-center">IL TUO BIGLIETTO</div>
+          <div class="row"><div class="col-4">DETTAGLIO PASSEGGERI</div></div>
           <div class="row">
             <div class="col-4">
-              <div class="mb-3">
-                <label for="inputFullName" class="form-label"
-                  >Nome Cognome</label
-                >
-                <input type="text" class="form-control" id="inputFullName" />
+              <div>NOME PASSEGGERO</div>
+              <div>Jon Snow</div>
+            </div>
+            <div class="col-8">
+              <div class="row">
+                <div class="col">
+                  <div>Offerta</div>
+                  <div>Biglietto Standard</div>
+                </div>
+                <div class="col">
+                  <div>Carrozza</div>
+                  <div>5</div>
+                </div>
+                <div class="col">
+                  <div>Codice CP</div>
+                  <div>92922</div>
+                </div>
+                <div class="col">
+                  <div>Costo biglietto</div>
+                  <div>2.10€</div>
+                </div>
               </div>
             </div>
-            <div class="col-4">
-              <div class="mb-3">
-                <label for="inputTravelDistance" class="form-label"
-                  >Km da percorrere</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="inputTravelDistance"
-                />
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="mb-3">
-                <label for="inputAgeRange" class="form-label"
-                  >Fascia d'età</label
-                >
-                <select id="inputAgeRange" class="form-select">
-                  <option selected>Maggiorenne</option>
-                  <option>Minorenne</option>
-                  <option>Over 65</option>
-                </select>
-              </div>
-            </div>
-            <button id="submit" type="submit" class="btn btn-primary">
-              Submit
-            </button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </body>
