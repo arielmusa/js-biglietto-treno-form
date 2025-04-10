@@ -4,6 +4,9 @@ const travelDistanceInput = document.getElementById("inputTravelDistance");
 const ageRangeInput = document.getElementById("inputAgeRange");
 const priceCalcForm = document.getElementById("priceCalcForm");
 
+// my ticket DOM elements
+/* const userFullName =  */
+
 priceCalcForm.addEventListener("submit", (event) => {
   event.preventDefault();
   // collect input values
@@ -21,14 +24,24 @@ priceCalcForm.addEventListener("submit", (event) => {
   const discountOver65 = 40 / 100;
   const baseTicketPrice = priceKm * travelDistance;
   let discountPrice = 0;
+  let ticketType = "";
 
   if (ageRange.toLowerCase() === "minorenne") {
     discountPrice = baseTicketPrice * discountMinors;
+    ticketType = "Biglietto scontato";
   } else if (ageRange.toLowerCase() === "over 65") {
     discountPrice = baseTicketPrice * discountOver65;
+    ticketType = "Biglietto scontato";
   }
-  let finalPrice = baseTicketPrice - discountPrice;
+  const finalPrice = baseTicketPrice - discountPrice;
   console.log("baseTicketPrice ", baseTicketPrice);
   console.log("discountPrice ", discountPrice);
   console.log("finalPrice ", finalPrice.toFixed(2));
+
+  // asign input values to my ticket section
+  document.getElementById("userFullName").innerText = fullName;
+  document.getElementById("ticketType").innerText = ticketType;
+  document.getElementById("ticketFinalPrice").innerText = `${finalPrice.toFixed(
+    2
+  )}€`;
 });
