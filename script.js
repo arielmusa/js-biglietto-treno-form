@@ -4,9 +4,7 @@ const travelDistanceInput = document.getElementById("inputTravelDistance");
 const ageRangeInput = document.getElementById("inputAgeRange");
 const priceCalcForm = document.getElementById("priceCalcForm");
 
-// my ticket DOM elements
-/* const userFullName =  */
-
+// event listener for form submit
 priceCalcForm.addEventListener("submit", (event) => {
   event.preventDefault();
   // collect input values
@@ -14,6 +12,7 @@ priceCalcForm.addEventListener("submit", (event) => {
   const travelDistance = parseInt(travelDistanceInput.value);
   const ageRange = ageRangeInput.value;
 
+  // check if variables are ok
   console.log("fullName ", fullName);
   console.log("travelDistance ", travelDistance);
   console.log("ageRange ", ageRange);
@@ -26,6 +25,7 @@ priceCalcForm.addEventListener("submit", (event) => {
   let discountPrice = 0;
   let ticketType = "Biglietto Standard";
 
+  // conditionals to apply discounts
   if (ageRange.toLowerCase() === "minorenne") {
     discountPrice = baseTicketPrice * discountMinors;
     ticketType = "Biglietto scontato";
@@ -33,12 +33,16 @@ priceCalcForm.addEventListener("submit", (event) => {
     discountPrice = baseTicketPrice * discountOver65;
     ticketType = "Biglietto scontato";
   }
-  const finalPrice = baseTicketPrice - discountPrice || 0;
+
+  // final price calc
+  const finalPrice = baseTicketPrice - discountPrice;
+
+  // check if price variables are ok
   console.log("baseTicketPrice ", baseTicketPrice);
   console.log("discountPrice ", discountPrice);
   console.log("finalPrice ", finalPrice.toFixed(2));
 
-  // asign input values to my ticket section
+  // asign values to my ticket section
   document.getElementById("userFullName").innerText = fullName;
   document.getElementById("ticketType").innerText = ticketType;
   document.getElementById("ticketFinalPrice").innerText = `${finalPrice.toFixed(

@@ -4,6 +4,7 @@ body {
 
 .btn-primary,
 .btn-primary:hover,
+.btn:first-child:active,
 .btn-outline-primary:hover {
   background-color: #b81550;
   border-color: #b81550;
@@ -12,4 +13,18 @@ body {
 .btn-outline-primary {
   border-color: #b81550;
   color: #b81550;
+}
+
+label {
+  color: #b81550;
+  font-weight: bold;
+}
+
+input,
+select {
+  border-color: #b81550 !important;
+}
+
+.my-ticket-data {
+  height: 110px;
 }
