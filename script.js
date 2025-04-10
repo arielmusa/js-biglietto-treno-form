@@ -24,7 +24,7 @@ priceCalcForm.addEventListener("submit", (event) => {
   const discountOver65 = 40 / 100;
   const baseTicketPrice = priceKm * travelDistance;
   let discountPrice = 0;
-  let ticketType = "";
+  let ticketType = "Biglietto Standard";
 
   if (ageRange.toLowerCase() === "minorenne") {
     discountPrice = baseTicketPrice * discountMinors;
@@ -33,7 +33,7 @@ priceCalcForm.addEventListener("submit", (event) => {
     discountPrice = baseTicketPrice * discountOver65;
     ticketType = "Biglietto scontato";
   }
-  const finalPrice = baseTicketPrice - discountPrice;
+  const finalPrice = baseTicketPrice - discountPrice || 0;
   console.log("baseTicketPrice ", baseTicketPrice);
   console.log("discountPrice ", discountPrice);
   console.log("finalPrice ", finalPrice.toFixed(2));
